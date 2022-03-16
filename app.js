@@ -2,10 +2,18 @@ const newInput = document.querySelector(".new-input");
 const addButton = document.querySelector(".add-button");
 const listItems = document.querySelector(".items");
 
+// add event to change add button from text to icon while typing in the input field
+newInput.addEventListener("input", function () {
+    addButton.innerHTML = "<i class='icon-plus-1'></i>";
+})
+
 addButton.addEventListener("click", addItems);
 function addItems() {
     const newItem = newInput.value;
     console.log(newItem);
+
+    // change add button back to text
+    addButton.innerHTML = "Add";
 
     // create li item that contains content div(checkbox and text content) and delete button
     const newList = document.createElement("li");
@@ -32,9 +40,9 @@ function addItems() {
     // newList.appendChild(eachContent);
     newListContent.appendChild(eachContent);
 
-    // empty input field
-    newInput.value = "";
-    newInput.focus();
+    // // empty input field
+    // newInput.value = "";
+    // newInput.focus();
 
     // add delete button
     const deleteButton = document.createElement("span");
@@ -50,4 +58,7 @@ function addItems() {
         listItems.removeChild(newList);
     })
 
+    // empty input field
+    newInput.value = "";
+    newInput.focus();
 };
