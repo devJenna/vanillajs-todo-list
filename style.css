@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-size: 1rem; */
+    /* font-family: 'Baloo 2', cursive; */
+    /* font-family: 'Fredoka', sans-serif; */
+    font-family: 'Mukta', sans-serif;
+    /* font-family: 'Saira', sans-serif; */
+}
+
+body {
+    /* background-color: rgba(221, 139, 107, 0.644); */
+    /* background-color: rgba(38, 93, 212, 0.753); */
+    /* background-color: rgb(232 130 127); */
+    background-color: rgb(231, 140, 137);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh; */
+    min-height: 100vh;
+    list-style: none;
+    font-size: 1.125rem;
+}
+/* .container {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; 
+} */
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    padding: 1rem;
+    font-size: 1.25rem;
+}
+i.icon-th-list-1 {
+    margin-right: 1rem;
+}
+.new-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 1rem;
+    border: 1px solid black;
+}
+input, button {
+    font-size: 1.125rem;
+}
+input {
+    flex-basis: 75%;
+}
+button {
+    flex-basis: 20%;
+}
+.list-container {
+    /* background-color: rgba(221, 139, 107, 0.644); */
+    /* background-color: white; */
+    width: 70vw;
+}
+.items {
+    display: flex;
+    flex-direction: column;
+    
+    padding: 1rem;
+    margin: 1rem 0;
+
+    border: 1px solid black;
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0.5rem;
+    /* border: 1px solid gray; */
+    
+    /* background-color: white; */
+    /* background-color: rgba(221, 139, 107, 0.644); */
+    /* border: 3px solid rgba(221, 139, 107, 0.644); */
+    /* border-bottom: 3px solid rgba(221, 139, 107, 0.644);
+    border-bottom: 3px solid rgba(38, 93, 212, 0.753);
+    border-bottom: 3px solid rgba(10, 59, 167, 0.836); */
+    /* border-bottom: 3px solid rgb(231, 140, 137); */
+    border-bottom: 3px solid black;
+    margin: 0.5rem;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.item-content {
+    display: inline-block;
+    margin-left: 0.5rem;
+}
+.item-checkbox {
+    align-items: center;
+
+}
+.delete {
+    /* color: rgba(38, 93, 212, 0.753); */
+    /* color: rgba(10, 59, 167, 0.836); */
+    /* color: rgb(231, 140, 137); */
+    color: black;
+}
