@@ -22,14 +22,17 @@ body {
     list-style: none;
     font-size: 1.125rem;
 }
-/* .container {
-    margin: 0 auto;
+.container {
+    /* margin: 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 100vh; 
-} */
+    min-height: 100vh;  */
+
+    width: 70vw;
+    max-width: 30rem;
+}
 
 header {
     display: flex;
@@ -59,11 +62,11 @@ input {
 button {
     flex-basis: 20%;
 }
-.list-container {
-    /* background-color: rgba(221, 139, 107, 0.644); */
-    /* background-color: white; */
+/* .list-container {
+    background-color: rgba(221, 139, 107, 0.644);
+    background-color: white;
     width: 70vw;
-}
+} */
 .items {
     display: flex;
     flex-direction: column;
