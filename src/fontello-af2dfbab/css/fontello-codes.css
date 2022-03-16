@@ -1,0 +1,22 @@
+
+.icon-cancel:before { content: '\e800'; } /* '' */
+.icon-cancel-alt:before { content: '\e801'; } /* '' */
+.icon-cancel-alt-filled:before { content: '\e802'; } /* '' */
+.icon-cancel-outline:before { content: '\e803'; } /* '' */
+.icon-ok:before { content: '\e804'; } /* '' */
+.icon-ok-outline:before { content: '\e805'; } /* '' */
+.icon-th-list:before { content: '\e806'; } /* '' */
+.icon-ok-1:before { content: '\e807'; } /* '' */
+.icon-plus:before { content: '\e808'; } /* '' */
+.icon-trash-empty:before { content: '\e809'; } /* '' */
+.icon-cancel-circled-outline:before { content: '\e80a'; } /* '' */
+.icon-cancel-circled:before { content: '\e80b'; } /* '' */
+.icon-cancel-1:before { content: '\e80c'; } /* '' */
+.icon-edit:before { content: '\e80d'; } /* '' */
+.icon-ok-2:before { content: '\e80e'; } /* '' */
+.icon-th-list-1:before { content: '\e80f'; } /* '' */
+.icon-cancel-2:before { content: '\e810'; } /* '' */
+.icon-plus-1:before { content: '\e811'; } /* '' */
+.icon-minus:before { content: '\e812'; } /* '' */
+.icon-pencil:before { content: '\e813'; } /* '' */
+.icon-trash:before { content: '\f1f8'; } /* '' */
