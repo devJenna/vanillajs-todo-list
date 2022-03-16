@@ -56,11 +56,28 @@ i.icon-th-list-1 {
 input, button {
     font-size: 1.125rem;
 }
-input {
+.input-label {
     flex-basis: 75%;
 }
-button {
-    flex-basis: 20%;
+.button-label {
+    /* flex-basis: 20%; */
+    /* flex-basis: 11.5%; */
+    flex-basis: 15%;
+    /* center align add button in the label */
+    text-align: center;
+}
+.new-input {
+    width: 100%;
+    height: 2.5rem;
+}
+
+.add-button {
+    /* remove default button style */
+    border: none;
+    outline: none;
+
+    width: 2.5rem;
+    height: 2.5rem;
 }
 /* .list-container {
     background-color: rgba(221, 139, 107, 0.644);
@@ -83,8 +100,7 @@ button {
     align-items: center;
 
     padding: 0.5rem;
-    /* border: 1px solid gray; */
-    
+
     /* background-color: white; */
     /* background-color: rgba(221, 139, 107, 0.644); */
     /* border: 3px solid rgba(221, 139, 107, 0.644); */
@@ -101,13 +117,12 @@ button {
     justify-content: center;
     align-items: center;
 }
+.item-checkbox {
+    align-items: center;
+}
 .item-content {
     display: inline-block;
     margin-left: 0.5rem;
-}
-.item-checkbox {
-    align-items: center;
-
 }
 .delete {
     /* color: rgba(38, 93, 212, 0.753); */
