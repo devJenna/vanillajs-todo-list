@@ -107,6 +107,8 @@ input, button {
     margin: 1rem 0;
 
     border: 2px solid black;
+    /* set default to none */
+    display: none;
 }
 
 .item {
