@@ -41,6 +41,8 @@ function addItems() {
         // const eachCheckbox = document.createElement("span");
         const eachCheckbox = document.createElement("label");
         eachCheckbox.classList.add("item-checkbox");
+        // add input and span inside of label
+        eachCheckbox.innerHTML = "<input type='checkbox' class='checkbox'></input><span class='checkmark'></span>";
         // newList.appendChild(eachCheckbox);
         newListContent.appendChild(eachCheckbox);
 
