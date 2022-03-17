@@ -107,7 +107,7 @@ input, button {
     margin: 1rem 0;
 
     border: 2px solid black;
-    
+
     /* set default to none */
     display: none;
 }
@@ -141,6 +141,7 @@ input, button {
 .item-content {
     display: inline-block;
     margin-left: 0.5rem;
+    word-break: break-word;
 }
 .delete {
     /* color: rgba(38, 93, 212, 0.753); */
