@@ -21,6 +21,8 @@ function addItems() {
         const newList = document.createElement("li");
         newList.classList.add("item");
         listItems.appendChild(newList);
+        // show the items border once input value is added
+        listItems.style.display = "block";
 
         // create content div to include checkbox and text content
         const newListContent = document.createElement("div");
@@ -31,7 +33,6 @@ function addItems() {
         // const eachCheckbox = document.createElement("span");
         const eachCheckbox = document.createElement("label");
         eachCheckbox.classList.add("item-checkbox");
-        eachCheckbox.innerHTML = "<input type='checkbox' class='checkbox'></input>";
         // newList.appendChild(eachCheckbox);
         newListContent.appendChild(eachCheckbox);
 
