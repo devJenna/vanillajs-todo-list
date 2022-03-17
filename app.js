@@ -7,6 +7,14 @@ newInput.addEventListener("input", function () {
     addButton.innerHTML = "<i class='icon-plus-1'></i>";
 })
 
+// trigger button click on enter 
+newInput.addEventListener("keyup", function (event) {
+    if (event.keyCode === 13) {
+        event.preventDefault();
+        addItems(event);
+    }
+})
+
 addButton.addEventListener("click", addItems);
 function addItems() {
     // add todo only when the input field is not empty
