@@ -197,3 +197,33 @@ input, button {
 .checkbox:checked ~ span.item-content {
     text-decoration: line-through;
 }
+
+.edit, .save {
+    background-color: black;
+    color: white;
+    padding: 0.125rem;
+    
+    width: 3rem;
+    height: 2rem;
+    text-align: center;
+}
+
+.save {
+    display: none;
+}
+.edit-input {
+    /* border: 1px solid rgb(231, 140, 137); */
+    border: none;
+    outline: none;
+    background-color: transparent;
+    margin-left: 0.5rem;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
