@@ -193,3 +193,7 @@ input, button {
 .checkbox:checked + .checkmark::after {
     display: block;
 }
+/* strike through the text when input checkbox is checked */
+.checkbox:checked ~ span.item-content {
+    text-decoration: line-through;
+}
