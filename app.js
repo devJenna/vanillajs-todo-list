@@ -112,7 +112,6 @@ function addItems() {
         }
 
 
-
         // add delete button
         const deleteButton = document.createElement("span");
         deleteButton.classList.add("delete");
@@ -132,3 +131,43 @@ function addItems() {
     newInput.value = "";
     newInput.focus();
 };
+
+// add color option
+const colorArray = [
+    "rgb(231, 140, 137)",
+    "rgb(247, 162, 159)",
+    "rgb(238, 238, 131)",
+    "rgb(247, 247, 148)",
+    "rgb(161, 224, 248)",
+    "rgb(155, 172, 248)",
+    "rgb(167, 152, 250)",
+    "rgb(178, 185, 197)"
+];
+
+const colorOption = document.querySelectorAll(".color-option");
+// change background color on color option button click
+colorOption.forEach((option, i) => {
+    // set default color for color option button
+    option.style.backgroundColor = colorArray[i];
+    // add click event to change background color and input border when the color option is selected
+    option.addEventListener("click", colorSelect);
+    function colorSelect() {
+        document.body.style.backgroundColor = colorArray[i];
+        newInput.style.borderColor = colorArray[i];
+        // colorOption[i].style.borderColor = "black";
+        // colorOption[i].style.borderStyle = "none";
+    }
+})
+
+
+// //  for loop - updated to forEach
+// for (let i = 0; i < colorOption.length; i++) {
+//     colorOption[i].addEventListener("click", function () {
+//         document.body.style.backgroundColor = colorArray[i];
+//         newInput.style.borderColor = colorArray[i];
+//         colorOption[i].style.borderColor = "black";
+//         // colorOption[i].style.borderStyle = "block";
+//         // colorOption[i].style.backgroundColor = "black";
+//         // colorOption[i].style.backgroundColor = colorArray[i];
+//     })
+// };
