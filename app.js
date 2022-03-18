@@ -38,20 +38,23 @@ function addItems() {
         newList.appendChild(newListContent);
 
         // add checkbox
-        // const eachCheckbox = document.createElement("span");
-        const eachCheckbox = document.createElement("label");
-        eachCheckbox.classList.add("item-checkbox");
+        // const labelContainer = document.createElement("span");
+        const labelContainer = document.createElement("label");
+        labelContainer.classList.add("item-container");
         // add input and span inside of label
-        eachCheckbox.innerHTML = "<input type='checkbox' class='checkbox'></input><span class='checkmark'></span>";
-        // newList.appendChild(eachCheckbox);
-        newListContent.appendChild(eachCheckbox);
+        labelContainer.innerHTML = "<input type='checkbox' class='checkbox'></input><span class='checkmark'></span>";
+        // newList.appendChild(labelContainer);
+        newListContent.appendChild(labelContainer);
 
         // add text content
-        const eachContent = document.createElement("div");
+        // const eachContent = document.createElement("div");
+        const eachContent = document.createElement("span");
         eachContent.classList.add("item-content");
         eachContent.innerHTML = newItem;
         // newList.appendChild(eachContent);
-        newListContent.appendChild(eachContent);
+        // newListContent.appendChild(eachContent);
+        // add todo content to label element to make checkbox checked when the content is clicked
+        labelContainer.appendChild(eachContent);
 
         // // empty input field
         // newInput.value = "";
