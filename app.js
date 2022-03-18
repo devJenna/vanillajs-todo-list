@@ -60,19 +60,73 @@ function addItems() {
         // newInput.value = "";
         // newInput.focus();
 
+        // create container for edit, delete, save button to align better (space between)
+        const newListButton = document.createElement("div");
+        newListButton.classList.add("button");
+        newList.appendChild(newListButton);
+
+        // create edit button and make the content editable
+        const editButton = document.createElement("span");
+        editButton.classList.add("edit");
+        editButton.innerHTML = "Edit";
+        // newList.appendChild(editButton);
+        newListButton.appendChild(editButton);
+        let todoItem = eachContent.innerHTML;
+        const todoItemInput = document.createElement("input");
+
+        editButton.addEventListener("click", editItem);
+        function editItem() {
+            console.log(todoItem);
+            todoItemInput.classList.add("edit-input");
+            labelContainer.appendChild(todoItemInput);
+            eachContent.style.display = "none";
+            todoItemInput.value = todoItem;
+            editButton.style.display = "none";
+            saveButton.style.display = "block";
+            todoItemInput.style.display = "block";
+            todoItemInput.focus();
+        }
+
+        // create save button and update the content
+        const saveButton = document.createElement("span");
+        saveButton.classList.add("save");
+        saveButton.innerHTML = "Save";
+        // newList.appendChild(saveButton);
+        // labelContainer.appendChild(saveButton);
+        newListButton.appendChild(saveButton);
+
+        saveButton.addEventListener("click", saveItem);
+        function saveItem() {
+            eachContent.style.display = "block";
+            eachContent.innerHTML = todoItemInput.value;
+            console.log(todoItem);
+            console.log(todoItemInput.value);
+            console.log(eachContent.innerHTML);
+            todoItemInput.style.display = "none";
+            editButton.style.display = "block";
+            saveButton.style.display = "none";
+            // eachContent.style.textDecoration = "none";
+            eachContent.value = todoItemInput.value;
+            todoItem = todoItemInput.value;
+            console.log(todoItem);
+        }
+
+
+
         // add delete button
         const deleteButton = document.createElement("span");
         deleteButton.classList.add("delete");
         deleteButton.innerHTML = '<i class="icon-cancel-2"></i>';
         // deleteButton.innerHTML = '<i class="icon-trash"></i>';
         // listItems.appendChild(deleteButton); 
-        newList.appendChild(deleteButton);
-
+        // newList.appendChild(deleteButton);
+        newListButton.appendChild(deleteButton);
 
         // delete the item
         deleteButton.addEventListener("click", () => {
             listItems.removeChild(newList);
         })
+
     }
     // empty input field
     newInput.value = "";
