@@ -14,6 +14,14 @@ body {
     /* background-color: rgba(38, 93, 212, 0.753); */
     /* background-color: rgb(232 130 127); */
     background-color: rgb(231, 140, 137);
+    background-color: rgb(247, 162, 159);
+    background-color: rgb(238, 238, 131);
+    background-color: rgb(247, 247, 148);
+    background-color: rgb(161, 224, 248);
+    background-color: rgb(155, 172, 248);
+    background-color: rgb(167, 152, 250);
+    background-color: rgb(178, 185, 197);
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -93,6 +101,7 @@ input, button {
 
     background-color: black;
     color: white;
+    cursor: pointer;
 }
 /* .list-container {
     background-color: rgba(221, 139, 107, 0.644);
@@ -145,12 +154,14 @@ input, button {
     display: inline-block;
     margin-left: 0.5rem;
     word-break: break-word;
+    cursor: pointer;
 }
 .delete {
     /* color: rgba(38, 93, 212, 0.753); */
     /* color: rgba(10, 59, 167, 0.836); */
     /* color: rgb(231, 140, 137); */
     color: black;
+    cursor: pointer;
 }
 
 /* input - hide default checkbox */
@@ -206,6 +217,7 @@ input, button {
     width: 3rem;
     height: 2rem;
     text-align: center;
+    cursor: pointer;
 }
 
 .save {
@@ -220,10 +232,27 @@ input, button {
     /* display: flex;
     justify-content: center;
     align-items: center; */
+
+    width: 6rem;
 }
 
 .button {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.color-nav {
+    text-align: right;
+}
+.color-option {
+    cursor:pointer;
+
+    width: 1rem;
+    height: 1rem;
+    display: inline-block;
+    border: 2px solid gray;
+    /* border-style: none; */
+    /* background-color: black; */
+    border-radius: 50%;
 }
