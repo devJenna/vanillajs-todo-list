@@ -135,7 +135,10 @@ input, button {
     justify-content: center;
     align-items: center;
 }
-.item-checkbox {
+/* .item-checkbox { */
+.item-container {
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
 .item-content {
@@ -148,4 +151,45 @@ input, button {
     /* color: rgba(10, 59, 167, 0.836); */
     /* color: rgb(231, 140, 137); */
     color: black;
+}
+
+/* input - hide default checkbox */
+.checkbox{
+        display: none;
+}
+
+/* customize checkbox using span tag inside of label */
+.checkmark {
+    width: 1.25rem;
+    height: 1.25rem;
+    display: inline-block;
+    border: 2px solid black;
+    border-radius: 0.2rem;
+    cursor: pointer;
+    /* align checkmark center in the checkbox */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0.2rem;
+    /* keep checkbox size in smaller screen width */
+    flex-shrink:0;
+}
+
+/* create checkmark */
+.checkmark::after {
+    content: "✔";
+    color: white;
+    /* hide checkmark when not checked */
+    display: none;
+    font-size: 1rem;
+}
+
+/* select checkmark - change background color when input checkbox is checked */
+.checkbox:checked + .checkmark {
+    background: black;
+    border-color: black;
+}
+/* show checkmark when input checkbox is checked */
+.checkbox:checked + .checkmark::after {
+    display: block;
 }
