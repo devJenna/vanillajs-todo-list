@@ -8,12 +8,19 @@ newInput.addEventListener("input", function () {
 })
 
 // trigger button click on enter 
-newInput.addEventListener("keyup", function (event) {
+// newInput.addEventListener("keyup", function (event) {
+//     if (event.keyCode === 13) {
+//         event.preventDefault();
+//         addItems(event);
+//     }
+// })
+newInput.addEventListener("keyup", enterKey);
+function enterKey(event) {
     if (event.keyCode === 13) {
         event.preventDefault();
         addItems(event);
     }
-})
+}
 
 addButton.addEventListener("click", addItems);
 function addItems() {
@@ -73,6 +80,7 @@ function addItems() {
         newListButton.appendChild(editButton);
         let todoItem = eachContent.innerHTML;
         const todoItemInput = document.createElement("input");
+        // const todoItemInput = document.createElement("textarea");
 
         editButton.addEventListener("click", editItem);
         function editItem() {
@@ -111,6 +119,14 @@ function addItems() {
             console.log(todoItem);
         }
 
+        // trigger save button click on enter after edit the input value
+        todoItemInput.addEventListener("keyup", enterKeyToSave);
+        function enterKeyToSave(event) {
+            if (event.keyCode === 13) {
+                event.preventDefault();
+                saveItem(event);
+            }
+        }
 
         // add delete button
         const deleteButton = document.createElement("span");
