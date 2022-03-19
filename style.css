@@ -196,7 +196,8 @@ input, button {
 .checkmark::after {
     /* content: "✔"; */
     content: "\2714";
-    color: white;
+    /* color: white; */
+    color: black;
     /* hide checkmark when not checked */
     display: none;
     font-size: 1rem;
@@ -204,7 +205,8 @@ input, button {
 
 /* select checkmark - change background color when input checkbox is checked */
 .checkbox:checked + .checkmark {
-    background: black;
+    /* background: black; */
+    background-color: white;
     border-color: black;
 }
 /* show checkmark when input checkbox is checked */
@@ -240,7 +242,7 @@ input, button {
     justify-content: center;
     align-items: center; */
 
-    /* width: 6rem; */
+    width: 6rem;
 }
 
 .button {
