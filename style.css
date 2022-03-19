@@ -8,7 +8,11 @@
     font-family: 'Mukta', sans-serif;
     /* font-family: 'Saira', sans-serif; */
 }
-
+/* textarea {
+    font-family: 'Mukta', sans-serif;
+    overflow-y: auto;
+    word-wrap: break-word;
+} */
 body {
     /* background-color: rgba(221, 139, 107, 0.644); */
     /* background-color: rgba(38, 93, 212, 0.753); */
@@ -141,8 +145,10 @@ input, button {
 
 .content {
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
+
+    flex-basis: 75%;
 }
 /* .item-checkbox { */
 .item-container {
@@ -188,7 +194,8 @@ input, button {
 
 /* create checkmark */
 .checkmark::after {
-    content: "✔";
+    /* content: "✔"; */
+    content: "\2714";
     color: white;
     /* hide checkmark when not checked */
     display: none;
@@ -233,13 +240,15 @@ input, button {
     justify-content: center;
     align-items: center; */
 
-    width: 6rem;
+    /* width: 6rem; */
 }
 
 .button {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    flex-basis: 20%;
 }
 
 .color-nav {
