@@ -4,7 +4,13 @@ const listItems = document.querySelector(".items");
 
 // add event to change add button from text to icon while typing in the input field
 newInput.addEventListener("input", function () {
-    addButton.innerHTML = "<i class='icon-plus-1'></i>";
+    // console.log(newInput.value);
+    if (newInput.value != "") {
+        addButton.innerHTML = "<i class='icon-plus-1'></i>";
+    }
+    else {
+        addButton.innerHTML = "Add";
+    }
 })
 
 // trigger button click on enter 
@@ -145,7 +151,7 @@ function addItems() {
             const eachListItem = document.querySelectorAll(".item");
             // console.log(eachListItem);
             // console.log(eachListItem.length);
-            if (eachListItem.length == 0) {
+            if (eachListItem.length === 0) {
                 listItems.style.display = "none";
             }
         })
