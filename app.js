@@ -140,6 +140,14 @@ function addItems() {
         // delete the item
         deleteButton.addEventListener("click", () => {
             listItems.removeChild(newList);
+
+            // remove border when all todo lists have been deleted
+            const eachListItem = document.querySelectorAll(".item");
+            // console.log(eachListItem);
+            // console.log(eachListItem.length);
+            if (eachListItem.length == 0) {
+                listItems.style.display = "none";
+            }
         })
 
     }
