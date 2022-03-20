@@ -267,3 +267,9 @@ input, button {
     /* background-color: black; */
     border-radius: 50%;
 }
+
+@media only screen and (max-width: 597px) {
+    .container {
+        width: 80vw;
+    }
+}
