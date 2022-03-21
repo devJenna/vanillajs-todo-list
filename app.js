@@ -154,8 +154,48 @@ function addItems() {
             if (eachListItem.length === 0) {
                 listItems.style.display = "none";
             }
+            if (eachListItem.length === 1) {
+                document.querySelector(".status").innerHTML = `${eachListItem.length} item`;
+            }
+            if (eachListItem.length > 1) {
+                document.querySelector(".status").innerHTML = `${eachListItem.length} items`;
+            }
         })
 
+        document.addEventListener("click", function () {
+            // add number of items left in the list
+            // count the number of checked boxes
+            const checkedCount = document.querySelectorAll("input[type=checkbox]:checked").length;
+            console.log(todoCount);
+            console.log(checkedCount);
+            const leftCount = (todoCount - checkedCount);
+            console.log(leftCount);
+            // }
+            if (leftCount > 1) {
+                document.querySelector(".status").innerHTML = `${leftCount} items`;
+            }
+            if (leftCount === 1) {
+                document.querySelector(".status").innerHTML = `${leftCount} item`;
+            }
+            if (leftCount === 0) {
+                document.querySelector(".status").innerHTML = "";
+            }
+        })
+
+        const checkedCount = document.querySelectorAll("input[type=checkbox]:checked").length;
+        // add number of items left in the list
+        const todoCount = document.querySelectorAll(".item").length;
+        const leftCount = (todoCount - checkedCount);
+        console.log(leftCount);
+        if (leftCount > 1) {
+            document.querySelector(".status").innerHTML = `${leftCount} items`;
+        }
+        if (leftCount === 1) {
+            document.querySelector(".status").innerHTML = `${leftCount} item`;
+        }
+        if (leftCount === 0) {
+            document.querySelector(".status").innerHTML = "";
+        }
     }
     // empty input field
     newInput.value = "";
