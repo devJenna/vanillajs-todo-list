@@ -186,8 +186,15 @@ colorOption.forEach((option, i) => {
         newInput.style.borderColor = colorArray[i];
         // colorOption[i].style.borderColor = "black";
         // colorOption[i].style.borderStyle = "none";
+
+        // change color of the border of the option button to black when clicked
+        const colorlist = Array.from(colorOption);
+        option.style.border = "2px solid black";
+        colorlist.filter(color => color.id != option.id).forEach(otherOption => {
+            otherOption.style.borderColor = "gray";
+        })
     }
-})
+});
 
 
 // //  for loop - updated to forEach
