@@ -2,6 +2,7 @@ const newInput = document.querySelector(".new-input");
 const addButton = document.querySelector(".add-button");
 const listItems = document.querySelector(".items");
 const leftTasks = document.querySelector(".status");
+const clearChecked = document.querySelector(".clear-checked");
 
 // add event to change add button from text to icon while typing in the input field
 newInput.addEventListener("input", function () {
@@ -34,7 +35,7 @@ function addItems() {
     // add todo only when the input field is not empty
     if (newInput.value != "") {
         const newItem = newInput.value;
-        console.log(newItem);
+        // console.log(newItem);
 
         // change add button back to text
         addButton.innerHTML = "Add";
@@ -91,7 +92,7 @@ function addItems() {
 
         editButton.addEventListener("click", editItem);
         function editItem() {
-            console.log(todoItem);
+            // console.log(todoItem);
             todoItemInput.classList.add("edit-input");
             labelContainer.appendChild(todoItemInput);
             eachContent.style.display = "none";
@@ -114,16 +115,16 @@ function addItems() {
         function saveItem() {
             eachContent.style.display = "block";
             eachContent.innerHTML = todoItemInput.value;
-            console.log(todoItem);
-            console.log(todoItemInput.value);
-            console.log(eachContent.innerHTML);
+            // console.log(todoItem);
+            // console.log(todoItemInput.value);
+            // console.log(eachContent.innerHTML);
             todoItemInput.style.display = "none";
             editButton.style.display = "block";
             saveButton.style.display = "none";
             // eachContent.style.textDecoration = "none";
             eachContent.value = todoItemInput.value;
             todoItem = todoItemInput.value;
-            console.log(todoItem);
+            // console.log(todoItem);
         }
 
         // trigger save button click on enter after edit the input value
@@ -150,43 +151,57 @@ function addItems() {
         const todoCount = document.querySelectorAll(".item").length;
         const leftCount = todoCount - checkedCount;
 
+        clearChecked.style.display = "block";
         clearAll.style.display = "block";
-
+        console.log(checkedCount);
+        console.log(todoCount);
+        // console.log(currentTodoCount);
+        console.log(leftCount);
+        // console.log(currentLeftCount);
         if (leftCount > 1) {
-            leftTasks.textContent = `${leftCount} items left`
+            leftTasks.textContent = `${leftCount} items left`;
+            clearChecked.textContent = `Clear ${checkedCount} Completed`;
             // display text when task count is more than 1
             clearAll.textContent = "Clear All";
         } else if (leftCount === 1) {
-            leftTasks.textContent = `${leftCount} item left`;
+            leftTasks.textContent = `${leftCount} item left`
+                ;
+            clearChecked.textContent = `Clear ${checkedCount} Completed`;
         } else if (leftCount === 0) {
             leftTasks.textContent = "";
+            // clearChecked.textContent = "";
         }
+        // clearChecked.textContent = `Clear ${checkedCount} Completed`;
+
 
         // delete the item
         // deleteButton.addEventListener("click", () => {
         deleteButton.addEventListener("click", deleteItem);
         function deleteItem() {
             listItems.removeChild(newList);
-            console.log(todoCount);
-            console.log(leftCount);
 
             // currentTodoCount is the number of the remaining to do items after deleted
             const currentTodoCount = document.querySelectorAll(".item").length;
-            // console.log(currentTodoCount);
+            console.log(checkedCount);
+            console.log(todoCount);
             console.log(currentTodoCount);
+            console.log(leftCount);
+            // console.log(currentLeftCount);
             if (currentTodoCount === 0) {
                 // remove border when all todo lists have been deleted
                 listItems.style.display = "none";
-                // leftTasks.textContent = "";
-                // clearAll.style.display = "none";
+
+                clearChecked.style.display = "none";
             }
             if (currentTodoCount == 1) {
                 leftTasks.textContent = `${currentTodoCount} item left`;
                 // clearAll.style.display = "none";
                 clearAll.textContent = "";
+                clearChecked.textContent = `Clear ${checkedCount} Completed`;
             }
             if (currentTodoCount > 1) {
                 leftTasks.textContent = `${currentTodoCount} items left`;
+                clearChecked.textContent = `Clear ${checkedCount} Completed`;
             }
             // })
         }
@@ -195,29 +210,62 @@ function addItems() {
             // count the number of checked boxes
             const checkedCount = document.querySelectorAll("input[type=checkbox]:checked").length;
             const currentTodoCount = document.querySelectorAll(".item").length;
-            // console.log(todoCount);
-            // console.log(currentTodoCount);
-            console.log(checkedCount);
+
             const currentLeftCount = (currentTodoCount - checkedCount);
+            console.log(checkedCount);
+            console.log(todoCount);
+            console.log(currentTodoCount);
+            console.log(leftCount);
             console.log(currentLeftCount);
 
 
             if (currentLeftCount > 1) {
                 leftTasks.textContent = `${currentLeftCount} items left`;
-            }
-            else if (currentLeftCount === 1) {
+                listItems.style.display = "block";
+                clearChecked.style.display = "block";
+                clearAll.style.display = "block";
+            } else if (currentLeftCount === 1) {
                 leftTasks.textContent = `${currentLeftCount} item left`;
-            }
-            else if (currentLeftCount === 0) {
+                listItems.style.display = "block";
+                clearChecked.style.display = "block";
+                clearAll.style.display = "block";
+            } else if (currentLeftCount === 0) {
                 leftTasks.textContent = "";
             }
 
-            // clearAll.style.display = "block";
-
+            clearChecked.textContent = `Clear ${checkedCount} Completed`;
 
             const checkedTodo = document.querySelectorAll(".checkbox:checked");
-            console.log(checkedTodo.length);
 
+            // clear items that have been checked in the list
+            clearChecked.addEventListener("click", deleteCheckedItems);
+            function deleteCheckedItems() {
+                console.log(checkedCount);
+                console.log(todoCount);
+                console.log(currentTodoCount);
+                console.log(leftCount);
+                console.log(currentLeftCount);
+                // if (checkedCount === 0) {
+                //     return;
+                // }
+
+                // else if (checkedCount != 0) {
+                // else {
+                checkedTodo.forEach(item => item.parentNode.parentNode.parentNode.remove());
+
+                // display none when clearChecked button has been clicked if all to do items are checked or no items are left in the list
+                if (currentTodoCount === checkedCount || currentLeftCount === 0 && currentTodoCount === 0) {
+                    listItems.style.display = "none";
+                    clearChecked.style.display = "none";
+                    clearAll.style.display = "none";
+                }
+                else if (currentTodoCount !== checkedCount) {
+                    listItems.style.display = "block";
+                    clearChecked.style.display = "block";
+                    clearAll.style.display = "block";
+                }
+            }
+            // }
         })
 
     }
@@ -233,6 +281,8 @@ clearAll.addEventListener("click", () => {
     listItems.style.display = "none";
     listItems.textContent = "";
     clearAll.textContent = "";
+    // clearChecked.textContent = "";
+    clearChecked.style.display = "none";
 });
 
 // add color option
