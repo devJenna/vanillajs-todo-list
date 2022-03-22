@@ -152,7 +152,8 @@ function addItems() {
         const leftCount = todoCount - checkedCount;
 
         clearChecked.style.display = "block";
-        clearAll.style.display = "block";
+        // clearAll.style.display = "block";
+        clearAll.style.display = "none";
         console.log(checkedCount);
         console.log(todoCount);
         // console.log(currentTodoCount);
@@ -163,10 +164,15 @@ function addItems() {
             clearChecked.textContent = `Clear ${checkedCount} completed`;
             // display text when task count is more than 1
             clearAll.textContent = "Clear all";
+            clearAll.style.display = "block";
         } else if (leftCount === 1) {
             leftTasks.textContent = `${leftCount} item left`
                 ;
             clearChecked.textContent = `Clear ${checkedCount} completed`;
+            clearAll.style.display = "none";
+            if (todoCount > 1) {
+                clearAll.style.display = "block";
+            }
         } else if (leftCount === 0) {
             leftTasks.textContent = "";
             // clearChecked.textContent = "";
@@ -192,16 +198,19 @@ function addItems() {
                 listItems.style.display = "none";
 
                 clearChecked.style.display = "none";
+                clearAll.style.display = "none";
             }
-            if (currentTodoCount == 1) {
+            if (currentTodoCount === 1) {
                 leftTasks.textContent = `${currentTodoCount} item left`;
-                // clearAll.style.display = "none";
-                clearAll.textContent = "";
+                clearAll.style.display = "none";
+                // clearAll.textContent = "";
+                // clearAll.style.display = "block";
                 clearChecked.textContent = `Clear ${checkedCount} completed`;
             }
             if (currentTodoCount > 1) {
                 leftTasks.textContent = `${currentTodoCount} items left`;
                 clearChecked.textContent = `Clear ${checkedCount} completed`;
+                // clearAll.style.display = "block";
             }
             // })
         }
@@ -228,7 +237,11 @@ function addItems() {
                 leftTasks.textContent = `${currentLeftCount} item left`;
                 listItems.style.display = "block";
                 clearChecked.style.display = "block";
-                clearAll.style.display = "block";
+                // clearAll.style.display = "block";
+                clearAll.style.display = "none";
+                if (currentTodoCount > 1) {
+                    clearAll.style.display = "block";
+                }
             } else if (currentLeftCount === 0) {
                 leftTasks.textContent = "";
             }
@@ -281,6 +294,7 @@ clearAll.addEventListener("click", () => {
     listItems.style.display = "none";
     listItems.textContent = "";
     clearAll.textContent = "";
+    clearAll.style.display = "none";
     // clearChecked.textContent = "";
     clearChecked.style.display = "none";
 });
