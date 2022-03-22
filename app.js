@@ -160,13 +160,13 @@ function addItems() {
         // console.log(currentLeftCount);
         if (leftCount > 1) {
             leftTasks.textContent = `${leftCount} items left`;
-            clearChecked.textContent = `Clear ${checkedCount} Completed`;
+            clearChecked.textContent = `Clear ${checkedCount} completed`;
             // display text when task count is more than 1
-            clearAll.textContent = "Clear All";
+            clearAll.textContent = "Clear all";
         } else if (leftCount === 1) {
             leftTasks.textContent = `${leftCount} item left`
                 ;
-            clearChecked.textContent = `Clear ${checkedCount} Completed`;
+            clearChecked.textContent = `Clear ${checkedCount} completed`;
         } else if (leftCount === 0) {
             leftTasks.textContent = "";
             // clearChecked.textContent = "";
@@ -197,11 +197,11 @@ function addItems() {
                 leftTasks.textContent = `${currentTodoCount} item left`;
                 // clearAll.style.display = "none";
                 clearAll.textContent = "";
-                clearChecked.textContent = `Clear ${checkedCount} Completed`;
+                clearChecked.textContent = `Clear ${checkedCount} completed`;
             }
             if (currentTodoCount > 1) {
                 leftTasks.textContent = `${currentTodoCount} items left`;
-                clearChecked.textContent = `Clear ${checkedCount} Completed`;
+                clearChecked.textContent = `Clear ${checkedCount} completed`;
             }
             // })
         }
@@ -233,7 +233,7 @@ function addItems() {
                 leftTasks.textContent = "";
             }
 
-            clearChecked.textContent = `Clear ${checkedCount} Completed`;
+            clearChecked.textContent = `Clear ${checkedCount} completed`;
 
             const checkedTodo = document.querySelectorAll(".checkbox:checked");
 
