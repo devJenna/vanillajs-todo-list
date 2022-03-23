@@ -303,12 +303,14 @@ clearAll.addEventListener("click", () => {
 const colorArray = [
     "rgb(231, 140, 137)",
     "rgb(247, 162, 159)",
-    "rgb(238, 238, 131)",
+    "rgb(240, 174, 135)",
+    // "rgb(238, 232, 150)",
+    // "rgb(238, 225, 150)",
     "rgb(247, 247, 148)",
-    "rgb(161, 224, 248)",
+    "rgb(150, 214, 206)",
     "rgb(155, 172, 248)",
     "rgb(167, 152, 250)",
-    "rgb(178, 185, 197)"
+    "rgb(162, 165, 170)"
 ];
 
 const colorOption = document.querySelectorAll(".color-option");
