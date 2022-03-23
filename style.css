@@ -24,7 +24,21 @@ body {
     background-color: rgb(161, 224, 248);
     background-color: rgb(155, 172, 248);
     background-color: rgb(167, 152, 250);
+    background-color: rgb(162, 150, 226);
+    background-color: rgb(181, 143, 216);
+    background-color: rgb(233, 218, 135);
     background-color: rgb(178, 185, 197); */
+
+    /* background-color: rgb(240, 174, 135);
+    background-color: rgb(238, 232, 150);
+    background-color: rgb(238, 225, 150);
+
+    background-color: rgb(241, 235, 151);
+    background-color: rgb(247, 247, 148);
+    background-color: rgb(150, 214, 206);
+    background-color: rgb(155, 172, 248);
+    background-color: rgb(167, 152, 250);
+    background-color: rgb(162, 165, 170); */
 
     display: flex;
     justify-content: center;
